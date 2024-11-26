@@ -8,7 +8,7 @@ Each solution is well-organized and categorized by platform, difficulty, and top
 
 ## Platforms
 
-### ![Codeforces](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Codeforces_logo.svg/512px-Codeforces_logo.svg.png) [Codeforces](https://codeforces.com/)
+### <img src="https://starchenkov.pro/qa/codeforces/codeforces.logo.png" alt="Codeforces Logo" width="200"/> [Codeforces](https://codeforces.com/)
 Codeforces is a competitive programming platform that hosts contests and provides a vast collection of problems to challenge your algorithmic and problem-solving skills.
 
 - **Directory**: [Codeforces Solutions](./Codeforces)
@@ -18,7 +18,7 @@ Codeforces is a competitive programming platform that hosts contests and provide
 
 ---
 
-### ![LeetCode](https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png) [LeetCode](https://leetcode.com/)
+### <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode Logo" width="200"/> [LeetCode](https://leetcode.com/)
 LeetCode is a go-to platform for preparing for technical interviews, offering problems categorized by difficulty, topic, and company relevance.  
 
 This repository includes my **50 SQL Challenges** solutions, which focus on enhancing SQL query skills using advanced concepts like joins, subqueries, aggregations, and window functions.
