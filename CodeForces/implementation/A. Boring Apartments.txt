@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t;
+    cin >> t ;
+    while(t--)
+    {
+        ll n , sum = 0 ;
+        cin >> n ;
+        string s = to_string(n);
+        for ( int i = 1 ; i <= s.size() ; i++ )
+            sum+= i ;
+
+        int x = s[0] - '0';
+        x--;
+        x*=10;
+        sum+=x;
+        cout << sum << endl;
+
+    }
+}

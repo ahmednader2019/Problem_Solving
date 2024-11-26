@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ 
+ 
+int main()
+{
+    string s1,s2;
+    cin>>s1>>s2;
+    int nonm=0;
+    bool yes=true;
+    if(s1.length()!=s2.length()){yes=false;}
+    char first1,first2,sec1,sec2;
+    for(int i=0;i<s1.length()&&nonm<=2;i++){
+        if(s1[i]!=s2[i]){
+            if(nonm==0){
+                first1=s1[i];
+                first2=s2[i];
+                nonm++;
+            }
+            else if(nonm==1){
+                sec1=s1[i];
+                sec2=s2[i];
+                nonm++;
+            }
+            else{
+                yes=false;
+                nonm++;
+            }
+        }
+    }
+    if(nonm==2){
+        if(!(first1==sec2)||!(first2==sec1)){
+            yes=false;
+        }
+    }
+    else{yes=false;}
+    if(yes){cout<<"YES";}
+    else{cout<<"NO";}
+ 
+}

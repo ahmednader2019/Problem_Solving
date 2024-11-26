@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t;
+    cin >> t ;
+    while(t--)
+    {
+        ll x , y , z ;
+        cin >> x >> y ;
+        if(x<y)
+            cout << y-x << endl;
+        else if(x%y==0)
+            cout << 0 << endl;
+        else
+        {
+            z = round(x/y);
+            z++;
+            cout << (y * z) - x << endl;
+        }
+    }
+}

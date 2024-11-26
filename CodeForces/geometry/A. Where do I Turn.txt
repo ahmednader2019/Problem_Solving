@@ -1,0 +1,16 @@
+#include <algorithm>
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main() {
+	int xa, xb,xc,ya,yb,yc;
+	cin>>xa>>ya>>xb>>yb>>xc>>yc;
+	double res = (double)(yc-yb)*(xa-xb)-(double)(ya-yb)*(xc-xb);
+	//cout<<res<<endl;
+	if(res>0) cout<<"RIGHT";
+	else if(res<0) cout<<"LEFT";
+	else cout<< "TOWARDS";
+}

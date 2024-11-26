@@ -1,0 +1,24 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    int sum1 = 0 , tot = 0 ;
+    string s , sum2 ;
+    cin >> s ;
+     for( int i = 0 ; i < s.size() ; i++ )
+     {
+          if(s[i]=='4' || s[i]=='7')
+            sum1++;
+     }
+      sum2 = to_string(sum1);
+       for( int i = 0 ; i < sum2.size(); i++ )
+       {
+           if(sum2[i]!='4'&&sum2[i]!='7')
+            tot++;
+       }
+         if(tot==0)
+            cout << "YES";
+         else
+            cout <<"NO";
+}

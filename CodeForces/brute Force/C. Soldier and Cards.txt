@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int counter = 0,n,num1,num2,x,first,second,winner=1;
+    deque<int>d1,d2;
+    cin >> n >>num1 ;
+    for( int i = 0 ; i < num1 ; i++ )
+    {
+        cin >> x ;
+        d1.push_back(x);
+    }
+    cin >> num2 ;
+    for( int i = 0 ; i < num2 ; i++ )
+    {
+        cin >> x ;
+        d2.push_back(x);
+    }
+
+     while((!d1.empty())&&(!d2.empty()))
+     {
+        if(counter>200)
+        {
+            cout << -1 << endl;
+            return 0 ;
+        }
+        first = d1.front();
+        second = d2.front();
+        if(second>first)
+        {
+            d2.push_back(first);
+            d2.push_back(second);
+            d2.pop_front();
+            d1.pop_front();
+            counter++;
+        }
+         else
+        {
+            d1.push_back(second);
+            d1.push_back(first);
+            d1.pop_front();
+            d2.pop_front();
+            counter++;
+        }
+    }
+       if(d1.empty())
+        winner = 2 ;
+       cout<< counter << " " << winner << endl;
+}

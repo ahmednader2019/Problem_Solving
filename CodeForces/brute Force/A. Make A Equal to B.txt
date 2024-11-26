@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define ll long long
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n, cnt = 0, sm = 0;
+        cin >> n;
+        vector<int> a(n), b(n);
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+            sm += a[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            cin >> b[i];
+            sm -= b[i];
+            cnt += (a[i] ^ b[i]);
+        }
+        cout << min(1 + abs(sm), cnt) << endl;
+    }
+    return 0;
+}

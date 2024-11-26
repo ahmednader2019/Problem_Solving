@@ -1,0 +1,16 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    string s,x,y,z;
+    cin >> s >> x >> y ;
+    z = s+x;
+    sort(z.begin(),z.end());
+    sort(y.begin(),y.end());
+     if(z==y)
+        cout << "YES";
+     else
+        cout << "NO";
+}

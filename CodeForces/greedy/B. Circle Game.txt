@@ -1,0 +1,49 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+
+        vector<long long int> v;
+        long long int min = INT_MAX;
+        int k;
+
+        for(int i = 0; i<n ; i++)
+        {
+            int a;
+            cin>>a;
+            v.push_back(a);
+            if(a < min)
+            {
+                min = a; 
+                k = i;
+            }
+        }
+
+        int b = v.size();
+
+        if(n%2 == 1)
+        {
+            cout<<"Mike"<<endl;
+        }
+        else
+        {
+            if(k%2 == 0)
+            {
+                cout<<"Joe"<<endl;
+            }
+            else
+            {
+                cout<<"Mike"<<endl;
+            }
+        }
+    }
+    return 0;
+}

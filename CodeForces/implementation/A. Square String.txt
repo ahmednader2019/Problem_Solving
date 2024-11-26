@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t ;
+    while(t--)
+    {
+        string s ,s1,s2;
+        cin >> s ;
+        int siz = s.size();
+        if(siz%2!=0)
+            cout << "NO" << endl;
+        else
+        {
+            for( int i = 0 ; i < siz / 2 ;i++  )
+               {
+                   s1+=s[0];
+                   s.erase(0,1);
+               }
+               if(s1==s)
+                cout << "YES" << endl;
+               else
+                cout << "NO" << endl;
+        }
+    }
+}

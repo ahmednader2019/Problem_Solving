@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n ;
+  cin >> n ;
+  for( int i = n+1 ; ; i++ )
+   {
+     string x = to_string(i) ;
+     sort(x.begin(),x.end());
+     if(x[0]!=x[1] && x[1]!=x[2] && x[2]!=x[3] )
+      {
+       cout << i ;
+       break ;
+      }
+   }
+}

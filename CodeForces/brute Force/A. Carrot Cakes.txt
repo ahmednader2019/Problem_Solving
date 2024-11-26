@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+ int n,k,t,oven,x;
+ cin >> n >> t >> k >> oven ;
+ x = ( n / k )* t ;
+ if(( n%k!=0 ) )
+  x = x + t ;
+
+ if( x > (t+oven))
+   cout <<"YES" ;
+ else
+   cout << "NO";
+}

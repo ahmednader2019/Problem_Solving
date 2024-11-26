@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+   vector<int>v;
+   while(n--){
+    int t,f,cnt=0;
+    cin>>f>>t;
+    if(t>=k)cnt=f-(t-k);
+    else cnt=f;
+    v.push_back(cnt);
+   }
+   cout<<*max_element(v.begin(),v.end());
+  return 0;
+}

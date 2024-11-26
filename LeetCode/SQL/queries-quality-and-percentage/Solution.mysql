@@ -1,0 +1,12 @@
+// https://leetcode.com/problems/queries-quality-and-percentage
+
+# Write your MySQL query statement below
+
+-- select count(query_name) from Queries 
+-- group by query_name ;
+
+select query_name , round(sum(rating/position) / count(query_name),2)  as quality ,
+round(100*avg(rating<3),2) as poor_query_percentage
+From queries 
+where query_name is not null
+group by query_name ;

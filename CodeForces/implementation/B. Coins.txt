@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string str ;
+    int a = 0 , b = 0 , c = 0;
+
+    for( int i = 0 ; i < 3 ; i++ )
+    {
+        cin >> str ;
+        if(str[1]=='>')
+        {
+            if(str[0]=='A')
+                a++;
+            else if(str[0]=='B')
+                b++;
+            else
+                c++;
+        }
+        if(str[1]=='<')
+        {
+            if(str[2]=='A')
+                a++;
+            else if(str[2]=='B')
+                b++;
+            else
+                c++;
+        }
+    }
+     if(a>b && a>c && b>c)
+        cout << "CBA";
+     else if(a>b && a>c && b<c)
+        cout << "BCA";
+     else if(b>a && b>c && a>c)
+        cout << "CAB";
+     else if(b>a && b>c && a<c)
+        cout << "ACB";
+     else if(c>a && c>b && a>b)
+        cout << "BAC";
+     else if(c>a && c>b && a<b)
+        cout << "ABC";
+     else
+        cout << "Impossible";
+}

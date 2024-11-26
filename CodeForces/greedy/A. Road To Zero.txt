@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+#define fast_ahmed ios::sync_with_stdio(false),cin.tie(NULL);
+#define cn(v) for(auto &(i):v)cin>>(i);
+#define pr(v) for(auto (i):v)cout<<(i)<<' ';
+#define tc int tc;cin>>tc;while(tc--)
+#define all(x) x.begin(),x.end()
+using namespace std;
+#define int long long
+void solve(){
+    int x,y,a,b;cin>>x>>y>>a>>b;
+    if(x>y)swap(x,y);
+    int mn=min(((x+y)*a),(x*b+(y-x)*a));
+    if(x!=y)cout<<mn<<'\n';
+    else cout<<min(mn,y*b)<<'\n';
+}
+signed main() {
+    fast_ahmed
+#ifndef ONLINE_JUDGE
+    freopen("mex.in","r",stdin);
+#endif
+    tc {
+    solve();
+    }
+}

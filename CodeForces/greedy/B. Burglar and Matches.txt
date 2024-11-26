@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool sortbysec(const pair<int,int> &a,
+              const pair<int,int> &b)
+{
+    return (a.second < b.second);
+}
+int main()
+{
+    long long n , m , sum = 0 ;
+    cin >> n >> m ;
+    long long  a[m],b[m];
+    vector<pair<int,int>>vect;
+    for( int i = 0 ; i < m ; i++ )
+    {
+        cin >> a[i] >> b[i] ;
+        vect.push_back(make_pair(a[i],b[i]));
+    }
+     sort(vect.rbegin(),vect.rend(),sortbysec);
+
+    for(int i = 0 ; i < m ; i++ )
+     {
+         if(n>vect[i].first)
+         {
+             sum+=vect[i].first*vect[i].second;
+             n-=vect[i].first;
+         }
+         else
+         {
+             sum+=n*vect[i].second;
+             break;
+         }
+     }
+       cout << sum ;
+}

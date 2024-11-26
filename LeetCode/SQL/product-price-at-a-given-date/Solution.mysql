@@ -1,0 +1,19 @@
+// https://leetcode.com/problems/product-price-at-a-given-date
+
+SELECT product_id, new_price as price 
+FROM Products p
+WHERE change_date = (
+    SELECT MAX(change_date) 
+    FROM Products 
+    WHERE product_id = p.product_id 
+      AND change_date <= '2019-08-16'
+)
+
+UNION 
+
+SELECT product_id, 10 AS new_price
+FROM Products
+GROUP BY product_id
+HAVING MIN(change_date) > '2019-08-16'
+
+ORDER BY 1;  -- Order by the first column (product_id)

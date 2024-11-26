@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string s ;
+    cin >> s;
+    int size = s.size();
+    int n = stoi(s);
+    if(n>=0)
+        cout << n ;
+    else
+    {
+        string a , b ;
+        int x,y;
+        a = s[size-1];
+        b = s[size-2];
+        x = stoi(a);
+        y = stoi(b);
+        if(x>y)
+            s.erase(s.begin() + (size-1), s.end() );
+        else
+            s.erase(s.begin() + (size-2), s.end() - 1);
+            if(s[1]=='0')
+                s.erase(s.begin()+0);
+
+            cout << s ;
+    }
+}

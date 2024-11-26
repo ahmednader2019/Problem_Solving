@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,pos=0,neg=0,j=0,z=0,x,res=0 ;
+    cin >> n ;
+    int a[n],b[n];
+    vector<pair<int,int>>pospair;
+    vector<pair<int,int>>negpair;
+
+    for( int i = 0 ; i < n ; i++ )
+    {
+        cin >> a[i] >> b[i];
+         if(a[i]>0)
+         {
+        pospair.push_back(make_pair(a[i],b[i]));
+        pos++;
+         }
+         else
+         {
+        negpair.push_back(make_pair(a[i],b[i]));
+        neg++;
+         }
+    }
+     sort(pospair.begin(), pospair.end());
+     sort(negpair.rbegin(), negpair.rend());
+     if(neg>pos)
+        x = 0 ;
+     else
+        x = 1 ;
+    for( int i = 0 ; ;i++)
+    {
+       if(x==0 && neg!=0)
+       {
+         res+=negpair[j].second;
+         neg--;
+         x = 1 ;
+         j++;
+         if(pos==0)
+            break;
+       }
+       else if(x==1 &&pos!=0)
+       {
+           res+=pospair[z].second;
+           pos--;
+           x = 0 ;
+           z++;
+           if(neg==0)
+            break;
+       }
+    }
+    cout << res <<endl;
+}

@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int bags[4];
+    for( int i = 0 ; i < 4 ; i++ )
+        cin >> bags[i];
+    sort(bags,bags+4);
+
+    if((bags[0]+bags[3])==(bags[1]+bags[2]) || bags[0]+bags[1]+bags[2]==bags[3])
+        cout << "YES";
+    else
+        cout << "NO";
+}

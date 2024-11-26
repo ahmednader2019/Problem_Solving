@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n , k , cnt = 0 ;
+    cin >> n >> k;
+    vector<int>v;
+    long long  primes[n*n]={0};
+    primes[0]=primes[1]=1;
+    for( int i = 2 ; i <= sqrt(n) ; i++ )
+    {
+        if(primes[i]==0)
+        {
+          for( int j = 2 ; i*j <=n ; j++ )
+              primes[i*j]=1;
+        }
+    }
+    for( int i = 2 ; i <= n ; i++ )
+    {
+            if(primes[i]==0)
+            v.push_back(i);
+    }
+    for( int i = 1 ; i < v.size() ; i++ )
+         {
+             long long  sum = 1 ;
+             sum+=v[i]+v[i-1];
+             if(primes[sum]==0 && sum <=n)
+                cnt++;
+         }
+          if(cnt>=k)
+          cout << "YES";
+          else
+          cout << "NO";
+}

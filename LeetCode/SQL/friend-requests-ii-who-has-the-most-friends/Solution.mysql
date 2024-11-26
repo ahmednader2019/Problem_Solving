@@ -1,0 +1,30 @@
+// https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends
+
+# Write your MySQL query statement below
+-- select count(total)  
+-- from(
+-- select accepter_id , count(accepter_id) as total From RequestAccepted 
+-- group by accepter_id
+-- union 
+-- select  requester_id , count(requester_id) From RequestAccepted 
+-- group by  requester_id)
+-- group by total 
+
+
+with FriendRequests as (
+    SELECT accepter_id AS user_id, COUNT(accepter_id) AS total 
+    FROM RequestAccepted 
+    GROUP BY accepter_id
+    UNION ALL
+    SELECT requester_id AS user_id, COUNT(requester_id) AS total 
+    FROM RequestAccepted 
+    GROUP BY requester_id
+)
+
+select user_id as id , sum(total) as num  From FriendRequests
+group by user_id 
+order by num desc 
+limit 1
+
+ 
+

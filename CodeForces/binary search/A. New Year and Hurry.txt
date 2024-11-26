@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll n , k , sum = 0 , ans = 0 ;
+    cin >> n >> k ;
+    for ( int i = 1 ; i<=n ;i++)
+    {
+        sum+=i*5;
+        if(sum<=(240-k))
+            ans++;
+        else
+            break;
+    }
+    cout << ans << endl;
+}

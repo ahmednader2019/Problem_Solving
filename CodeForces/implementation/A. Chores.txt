@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define sz(s) int(s.size() )
+#define ll long long
+#define endl "\n"
+#define fastIO ios_base::sync_with_stdio(0); cin.tie(0);cout.tie(0);
+
+int main() {
+    fastIO
+
+    int n, c_t, n_time, sum = 0;
+    cin >> n >> c_t >> n_time;
+
+    int tasks [100+3];
+    for (int i = 0; i < n; ++i) {
+        cin >> tasks [i];
+    }
+    sort(tasks, tasks +n, greater<int>());
+    for (int i = 0; i < c_t; ++i) {
+        tasks[i] = n_time;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        sum += tasks[i];
+    }
+    cout << sum;
+}
+  	 				 	 	 			   		 	 	 	  	

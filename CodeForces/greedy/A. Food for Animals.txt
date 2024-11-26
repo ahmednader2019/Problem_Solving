@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long  t ;
+    cin >> t ;
+    while(t--)
+    {
+        long long a , b , c , x , y , sum = 0;
+        cin >> a >> b >> c >> x >> y ;
+        if( y > b )
+         sum+=y-b;
+        if( x > a )
+         sum+=x-a;
+        if(sum>c)
+            cout << "NO"<<endl;
+        else
+            cout << "YES"<<endl;
+    }
+}

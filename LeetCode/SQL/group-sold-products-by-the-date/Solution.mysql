@@ -1,0 +1,5 @@
+// https://leetcode.com/problems/group-sold-products-by-the-date
+
+# Write your MySQL query statement below
+select sell_date , count(distinct product) as num_sold , (select GROUP_CONCAT( distinct product order by product SEPARATOR ',')) AS products From Activities 
+group by sell_date ; 

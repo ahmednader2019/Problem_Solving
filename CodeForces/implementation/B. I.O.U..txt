@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n , m , res=0 ;
+  cin >> n >> m;
+  int x,y,z;
+  int sum[1000]= {0};
+   for( int i = 1 ; i <=m ; i++ )
+   {
+       cin >> x >> y >> z ;
+       sum[x]-=z;
+       sum[y]+=z;
+   }
+   for( int i = 1 ; i <= n ; i++ )
+   {
+       if(sum[i]>0)
+        res+=sum[i];
+   }
+     cout << res ;
+}

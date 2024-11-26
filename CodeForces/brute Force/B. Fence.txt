@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , k ;
+    long long  min = 1e9,index , ans ;
+    cin >> n >> k ;
+    int a[n+1],s[n+1];
+    for( int i = 1 ; i <= n ; i++ )
+    {
+        cin >> a[i] ;
+        a[i]+=a[i-1];
+    }
+     for( int i = 0 ; i < n-k+1 ; i++ )
+     {
+        if(a[k+i]-a[i] < min)
+        {
+            min =a[k+i]-a[i];
+            index =i+1;
+        }
+     }
+       cout  << index  ;
+}

@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+  int t;
+  cin>>t;
+  
+  while(t--)
+    {
+      long long int n,in=-1,i,x;
+      cin>>n;
+      char s[n],c,a,b;
+      vector<long long int> v;
+      cin>>c;
+      for(i=0; i<n; i++)
+        {
+          cin>>s[i];
+          if(s[i]=='g' && in==-1)
+            in=i;
+        }
+      i=0;
+      while(i<n)
+        {
+          if(s[i]==c)
+          {
+            x=i;
+            while(s[i]!='g' && i<n)
+              i++;
+            if(i==n)
+              v.push_back(n-x+in);
+            v.push_back(i-x);
+            i++;
+          }
+          else
+            i++;
+        }
+      cout<<*max_element(v.begin(),v.end())<<endl;
+    }
+
+  return 0;
+}

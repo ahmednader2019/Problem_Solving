@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long  n , f , sum = 0 , before , after ;
+    cin >> n >> f ;
+    long long  a[n],b[n],c[n];
+
+     for( int i = 0 ; i < n ; i++ )
+     {
+         cin >> a[i] >> b[i] ;
+         sum+=min(a[i],b[i]);
+         before = min(a[i],b[i]);
+         after = min(2*a[i],b[i]);
+         c[i] = before - after ;
+     }
+     sort(c,c+n);
+     for( int i = 0 ; i < f ; i++ )
+        sum+=abs(c[i]);
+
+     cout << sum ;
+}

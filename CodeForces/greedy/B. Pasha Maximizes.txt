@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+#include <limits>
+#define endl '\n'
+typedef long long int ll; 
+using namespace std;
+ 
+void blast() {
+	string str;
+	int k;
+	cin>>str>>k;
+	int n = str.length();
+	for(int i = 0;i < n;i++) {
+		int curVal = str[i] - '0';
+		vector<pair<int, int>> req;
+		for(int j = i + 1;j < n;j++) {
+			req.push_back({ str[j] - '0', j });
+		}
+		sort(req.begin(), req.end(), [&](auto &it1, auto &it2) {
+			if(it1.first == it2.first) {
+				return it1.second < it2.second;
+			}
+			return it1.first > it2.first;
+		});
+		// for(auto x: req) {
+		// 	cout<<x.first<<" "<<x.second<<endl;
+		// }
+		// cout<<endl;
+		for(int j = 0;j < req.size();j++) {
+			int val = req[j].first;
+			int pos = req[j].second;
+			int dif = pos - i;
+			if(dif <= k && val > curVal) {
+				ll it = pos;
+				while(it > i) {
+					swap(str[it], str[it - 1]);
+					it--;
+				}
+				k -= dif;
+				break;
+			}
+		}
+	}
+	cout<<str<<endl;
+}
+ 
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int t = 1;
+	// cin>>t;
+	while(t--) {
+		blast();
+	}
+}

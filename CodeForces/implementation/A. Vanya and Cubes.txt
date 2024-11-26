@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,sum=0,res=0;
+    cin >> n ;
+    for( int i = 1 ; ; i++ )
+    {
+        sum+=i;
+        res+=sum;
+        if(res==n)
+        {
+            cout << i << endl ;
+            break;
+        }
+        else if(res>n)
+        {
+            cout << i-1 << endl ;
+            break ;
+        }
+    }
+}

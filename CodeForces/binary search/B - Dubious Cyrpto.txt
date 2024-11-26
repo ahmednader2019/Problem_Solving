@@ -1,0 +1,26 @@
+#include<bits/stdc++.h> 
+using namespace std;
+int main(){
+   long long t,l,r,m,a,up1,down1,ans;
+   cin>>t;
+   while(t--){
+        cin>>l>>r>>m;
+        long long tes;
+        down1=m-r+l;
+        up1=m+r-l;
+        for(a=l;a<=r;a++){
+            tes=(up1)/a;
+            if(tes*a<=up1&&tes*a>=down1)break;
+        }
+        ans=r-m+tes*a;
+        if(ans>r){
+            ans=l-m+tes*a;
+            r=l;
+        }
+        cout<<a<<" "<<r<<" "<<ans<<endl;
+   }
+
+	system("pause");
+	return 0;
+}
+      	  				 	 	  				 			 	

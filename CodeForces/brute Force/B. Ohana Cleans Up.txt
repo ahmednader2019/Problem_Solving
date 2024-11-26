@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+size_t max_occurence( const std::string a[], size_t n )
+{
+    size_t max = 0;
+    size_t max_count = 0;
+
+    for ( size_t i = 0; i != n; i++ )
+    {
+        size_t j = 0;
+
+        while ( j != i && a[j] != a[i] ) ++j;
+
+        if ( j == i )
+        {
+            size_t count = 1;
+            while ( ++j != n )
+            {
+                if ( a[j] == a[i] ) ++count;
+            }
+
+            if ( max_count < count )
+            {
+                max = i;
+                max_count = count;
+            }
+        }
+    }
+
+    return max_count;
+}
+
+int main()
+{
+    int n ;
+    cin >> n ;
+    string str[n];
+     for( int i = 0 ; i < n ; i++ )
+         cin >> str[i];
+
+    auto max = max_occurence( str, sizeof( str ) / sizeof( *str ) );
+
+    cout << max ;
+
+    return 0;
+}

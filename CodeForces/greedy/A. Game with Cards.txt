@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long t ;
+    cin >> t ;
+    while(t--)
+    {
+        long long n , m , maxalice , maxbob;
+        cin >> n ;
+        long long alice[n];
+        for( int i = 0 ; i < n ; i++ )
+            cin >> alice[i];
+        cin >> m ;
+        long long bob[m];
+        for( int i = 0 ; i < m ; i++ )
+            cin >> bob[i];
+        maxalice = *max_element(alice,alice+n);
+        maxbob = *max_element(bob,bob+m);
+        if(maxalice>maxbob)
+           cout << "Alice" << "\n" << "Alice" << endl;
+        else if(maxbob>maxalice)
+           cout << "Bob" << "\n" << "Bob" << endl;
+        else
+           cout << "Alice" << "\n" << "Bob" << endl;
+    }
+}

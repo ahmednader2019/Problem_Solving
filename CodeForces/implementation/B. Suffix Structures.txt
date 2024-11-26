@@ -1,0 +1,72 @@
+#include<bits/stdc++.h>
+using namespace std;
+int findNumberOfTimes(string str1, string str2)
+{
+    int freq[26] = { 0 };
+    int freq2[26] = { 0 };
+
+    int l1 = str1.length();
+    int l2 = str2.length();
+    // iterate and mark the frequencies of
+    // all characters in str1
+    for (int i = 0; i < l1; i++)
+        freq[str1[i] - 'a'] += 1;
+
+  for (int i = 0; i < l2; i++)
+        freq2[str2[i] - 'a'] += 1;
+
+
+    int count = INT_MAX;
+
+    // find the minimum frequency of
+    // every character in str1
+    for (int i = 0; i < l2; i++)
+    {
+      if(freq2[str2[i]-'a']!=0)
+      count = min(count, freq[str2[i] - 'a']/freq2[str2[i]-'a']);
+    }
+    return count;
+}
+int main()
+{
+   string s,t,str ;
+   int automation = 0 , aray = 0;
+   cin >> s >> t ;
+    if(s.size()==t.size())
+   {
+       sort(s.begin(),s.end());
+       sort(t.begin(),t.end());
+       if(s==t)
+        aray++;
+   }
+   if(s.size()>t.size())
+   {
+     int j = 0;
+     for (int i = 0; i < s.size(); i++)
+      {
+      if (s[i] == t[j]) {
+         j++;
+      }
+      }
+      if (j == t.size()||s.find(t) != string::npos)
+        automation++;
+   }
+
+   if(s.size()>t.size()&&automation==0)
+   {
+        int x = findNumberOfTimes(s,t);
+        if(x>=1)
+        {
+            aray++;
+            automation++;
+        }
+   }
+     if(automation>0 && aray==0)
+        cout << "automaton";
+     else if(automation==0 && aray>0)
+        cout << "array";
+     else if(automation>0 && aray>0 )
+        cout << "both";
+        else if(automation ==0 && aray == 0)
+            cout <<"need tree";
+}

@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , m , dances = 0 ;
+    cin >> n >> m ;
+    int boys[n+1]={0},girls[m+1]={0};
+    vector<int>a,b;
+
+    for( int i = 1 ; i <= n ; i++ )
+    {
+        for( int j = 1 ; j <= m ; j++ )
+        {
+            if(boys[i]==0 || girls[j]==0)
+            {
+                dances++;
+                boys[i] = 1 ;
+                girls[j] = 1 ;
+                a.push_back(i);
+                b.push_back(j);
+            }
+        }
+    }
+           cout << dances << endl;
+          for( int i = 0 ; i < a.size() ; i++ )
+             cout << a[i] << " " << b[i] <<endl;
+}

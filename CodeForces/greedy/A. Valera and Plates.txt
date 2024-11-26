@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n , bowls , plates,clean=0 ;
+    cin >> n >> bowls >> plates ;
+    int days[n];
+
+    for(int i = 0 ; i < n ; i++ )
+    {
+        cin >> days[i];
+        if(days[i]==1 && bowls==0)
+            clean++;
+        else if(bowls == 0 && plates==0)
+            clean++;
+
+        else if(days[i]==1)
+            bowls--;
+        else if(days[i]==2)
+        {
+            if(plates!=0)
+                plates--;
+            else
+                bowls--;
+        }
+    }
+     cout << clean ;
+}

@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , m , min = 0 , max = 0;
+    cin >> n >> m ;
+    int planes1[m],planes2[m];
+
+    for( int i = 0 ; i < m ; i++ )
+    {
+      cin >> planes1[i];
+      planes2[i]=planes1[i];
+    }
+
+    sort(planes1,planes1+m);
+    int j = 0 ;
+    for(int i = 0 ; i < n ; i++ )
+    {
+        if(planes1[j]!=0)
+        {
+            min+=planes1[j];
+            planes1[j]--;
+            sort(planes1,planes1+m);
+        }
+        else if (planes1[j]==0)
+        {
+            j++;
+            i--;
+        }
+    }
+     sort(planes2,planes2+m,greater<int>());
+     for( int i = 0 ; i < n ; i++ )
+     {
+         max+=planes2[0];
+         planes2[0]--;
+         sort(planes2,planes2+m,greater<int>());
+     }
+      cout << max << " " << min ;
+}

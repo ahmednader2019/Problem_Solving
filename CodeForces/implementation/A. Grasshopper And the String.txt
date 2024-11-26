@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     string s ;
+     long  counter = 1 , ans = 0;
+     cin >> s ;
+     long siz = s.size();
+     for( long i = 0 ; i < siz ; i++ )
+     {
+         if(s[i]!='A'&&s[i]!='E'&&s[i]!='I'&&s[i]!='O'&&s[i]!='U'&&s[i]!='Y')
+            counter++;
+         else
+         {
+             ans = max(ans,counter);
+             counter = 1 ;
+         }
+          if(i==siz-1)
+           ans = max(ans,counter);
+     }
+        cout << ans ;
+}

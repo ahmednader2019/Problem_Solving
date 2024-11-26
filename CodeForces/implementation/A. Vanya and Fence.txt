@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+ int res ;
+ res = 0 ;
+ int n , h ;
+ int a ;
+ cin >> n >> h ;
+ for ( int i = 0 ; i < n ; i++ )
+ {
+  cin >> a ;
+  if ( a > h )
+  res = res + 2 ;
+  else
+  res++;
+ }
+cout << res << endl;
+ 
+}

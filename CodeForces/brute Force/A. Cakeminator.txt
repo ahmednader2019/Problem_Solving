@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int r , c , sum = 0 ;
+    cin >> r >> c ;
+    int rows[r]={0},columns[c]={0};
+    char straw[r][c];
+
+    for( int i = 0 ; i < r ; i++ )
+    {
+        for( int j =  0 ; j < c ; j++)
+        {
+            cin >> straw[i][j];
+            if(straw[i][j]=='S')
+            {
+                rows[i]++;
+                columns[j]++;
+            }
+        }
+    }
+     for( int i = 0 ; i < r ; i++ )
+       {
+           for( int  j = 0 ; j < c ; j++ )
+           {
+               if(straw[i][j]=='.')
+               {
+                   if(rows[i]==0||columns[j]==0)
+                    sum++;
+               }
+           }
+       }
+       cout << sum ;
+}

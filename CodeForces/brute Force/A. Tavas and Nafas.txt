@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string first[]={"zero","one","two","three","four","five","six","seven","eight","nine","ten"};
+    string second[] = {"eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+    string third[]={"x","x","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+    int num ,x,remainder;
+    cin >> num ;
+
+    if(num>=0 && num<=10)
+    {
+        cout << first[num];
+        return 0 ;
+    }
+    else if(num>=11 && num<=19)
+    {
+        cout << second[num-11];
+        return 0 ;
+    }
+    else
+    {
+        x = num / 10 ;
+        remainder = num - (x * 10 );
+        cout << third[x];
+    }
+     if(remainder!=0)
+         cout << '-' << first[remainder];
+}

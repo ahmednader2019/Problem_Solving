@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string str1,str2,str3;
+    int sum1=0,sum2=0,sum3=0;
+    int s1,s2,s3;
+    getline(cin,str1);
+    getline(cin,str2);
+    getline(cin,str3);
+    s1 = str1.size();
+    s2 = str2.size();
+    s3 = str3.size();
+     for( int i = 0 ; i < max(max(s1,s2),s3) ; i++ )
+        {
+            if(i<s1)
+            {
+                if(str1[i]=='a'||str1[i]=='e'||str1[i]=='i'||str1[i]=='o'||str1[i]=='u')
+                    sum1++;
+            }
+            if(i<s2)
+            {
+                if(str2[i]=='a'||str2[i]=='e'||str2[i]=='i'||str2[i]=='o'||str2[i]=='u')
+                    sum2++;
+            }
+            if(i<s3)
+            {
+                if(str3[i]=='a'||str3[i]=='e'||str3[i]=='i'||str3[i]=='o'||str3[i]=='u')
+                    sum3++;
+            }
+        }
+        if(sum1==5&&sum2==7&&sum3==5)
+            cout << "YES";
+        else
+            cout << "NO";
+}

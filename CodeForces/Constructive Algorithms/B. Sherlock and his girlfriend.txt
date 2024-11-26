@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n ;
+    cin >> n ;
+    long long primes[n+2];
+    if(n==1)
+    {
+        cout << 1 << endl;
+        cout << 1 << endl;
+        return 0 ;
+    }
+    if(n==2)
+    {
+        cout << 1 << endl;
+        cout << 1 << " " << 1 << endl;
+        return 0 ;
+    }
+    for( int i = 0 ; i <= n+1  ; i++ )
+         primes[i] = 1;
+    for( int i = 2 ; i <= sqrt(n+1) ; i++ )
+    {
+      for( int j = 2 ; i*j<=n+1 ; j++ )
+             primes[i*j] = 2;
+    }
+     cout << 2 << endl;
+     for( int i = 2 ; i <= n+1; i++ )
+     cout << primes[i]<<" ";
+}

@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t ;
+    cin >> t ;
+    while(t--)
+        {
+            long long n , x , y , z , a , b , c ;
+            cin >> n ;
+            x = n / 3 ;
+            y = n / 3 ;
+            z = n-(x+y);
+            x--;
+            y++;
+            if(y==z)
+            {
+                z++;
+                y--;
+            }
+            a = max(x,max(y,z));
+            b = min(x,max(y,z));
+            cout << n-(a+b) << " " << a << " " << b << endl;
+        }
+}

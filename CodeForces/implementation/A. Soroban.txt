@@ -1,0 +1,30 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+     string n,x , f1 = "O-|",f2 = "-O|";
+     cin >> n ;
+     int y = n.size(),z;
+     string s[y];
+      for( int i = y-1 ; i>=0 ; i--)
+      {
+            x = n[i];
+            z = stoi(x);
+              if(z<5)
+                cout << f1 ;
+              else
+              {
+                  cout << f2;
+                  z-=5 ;
+              }
+            for( int j = 0 ; j < 5 ; j++ )
+            {
+                x[j]='O';
+                 if(j==z)
+                    x[j]='-';
+              cout << x[j];
+            }
+            cout << endl;
+      }
+}

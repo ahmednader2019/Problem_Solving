@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, m, count = 0, price = 0;
+    cin >> n >> m;
+
+    vector<int> types;
+    vector<bool> temp(1000000000, true);
+    for (int i = 0; i < n; i++)
+    {
+        int num;
+        cin >> num;
+        temp[num] = false;
+    }
+
+    int x = 1;
+    while (price <= m)
+    {
+        if (temp[x] == true)
+        {
+            price += x;
+            types.push_back(x);
+        }
+        x++;
+    }
+    types.pop_back();
+    cout << types.size() << endl;
+    for (int i = 0; i < types.size() ; i++)
+        cout << types[i] << ' ';
+    return 0;
+}

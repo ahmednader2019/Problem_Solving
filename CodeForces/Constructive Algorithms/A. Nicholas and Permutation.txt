@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// int palindrome(string s){
+//   string k=s;
+//   reverse(s.begin(), s.end());
+//   if(k==s) return true;
+//   else return false;
+// }
+int main(){
+ios::sync_with_stdio(false);
+cin.tie(0);
+// int t;
+// cin>>t;
+// while(t--)
+// {
+  
+// }
+int n,a,b;
+cin>>n;
+int c[n];
+for(int i=0; i<n; i++){
+  cin>>c[i];
+  if(c[i]==1) a=i;
+  if(c[i]==n) b=i;
+}
+int k=max(n-a-1, n-b-1), l=max(a, b);
+int f=max(k,l);
+cout<<f<<endl;
+return 0;
+}

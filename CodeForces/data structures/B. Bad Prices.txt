@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define ld long double
+#define inf 1000000000
+//#define endl '\n'
+#define IO ios_base::sync_with_stdio(0);cin.tie(0);
+using namespace std;
+const int N= 2e3 + 5, M=1e3+5 ,mod= 1e9+7;
+
+int main() {
+    IO
+    int t;
+    cin >> t;
+    while (t--)
+    {
+
+
+
+
+
+        int n ;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        int bd_cnt = 0;
+        int mn = inf ;
+        for(int i=n-1 ; i>=0 ; i--)
+        {
+            if(mn < arr[i])
+            {
+                bd_cnt++;
+            }
+            else mn=arr[i];
+        }
+
+        cout<<bd_cnt<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+    return 0;
+
+}
+
+
+	 	    							  				 	  	   		

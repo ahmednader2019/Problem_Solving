@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    string murder , replaced ;
+    cin >> murder >> replaced ;
+    vector<string>first,second;
+    ll n ;
+    cin >> n ;
+    first.push_back(murder);
+    second.push_back(replaced);
+    for( ll i = 0 ; i < n ; i++ )
+    {
+        string s , x ;
+        cin >> s >> x ;
+        if(s==murder)
+            murder = x ;
+        else if(s==replaced)
+            replaced = x ;
+        first.push_back(murder);
+        second.push_back(replaced);
+    }
+    for( ll i = 0 ; i < first.size() ; i++ )
+         cout << first[i] << " " << second[i] << endl;
+}

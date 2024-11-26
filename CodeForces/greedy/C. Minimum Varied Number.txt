@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t;
+    while(t--)
+    {
+         ll n ;
+         vector<int>v;
+         cin >> n ;
+         for( int i = 9 ; i > 0 ; i--)
+         {
+             if(n>i)
+             {
+                 v.push_back(i);
+                 n = n - i ;
+             }
+             else
+             {
+                 v.push_back(n);
+                 break;
+             }
+         }
+         int siz = v.size()-1;
+         for( int i = siz ; i >=0 ; i-- )
+             cout << v[i];
+
+         cout << endl;
+    }
+}

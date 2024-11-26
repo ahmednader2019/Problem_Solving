@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long  n , sum = 0 ;
+    cin >> n ;
+    long long  a[n],b[n];
+
+    for( int i = 0 ; i < n ; i++ )
+    {
+        cin >> a[i] ;
+        sum+=a[i] ;
+    }
+     for( int i = 0 ; i < n ; i++ )
+         cin >> b[i] ;
+
+     sort(b,b+n, greater<int>());
+     if(sum > b[0]+b[1])
+        cout << "NO";
+     else
+        cout << "YES";
+}

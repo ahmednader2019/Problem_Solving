@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, k;
+    cin >> n >> k;
+    priority_queue<int, vector<int>, greater<int>> p10, p01, p11;
+    for (int i = 0; i < n; i++)
+    {
+        int t, a, b;
+        cin >> t >> a >> b;
+        if (a + b == 2)
+            p11.push(t);
+        else if (b == 1 )
+            p01.push(t);
+        else if (a == 1)
+            p10.push(t);
+    }
+
+    while (p01.empty() == false && p10.empty() == false)
+    {
+        int x = p01.top();
+        p01.pop();
+        int y = p10.top();
+        p10.pop();
+        p11.push(x + y);
+    }
+
+    if (p11.size() < k)
+    {
+        cout << -1 << endl;
+        return 0;
+    }
+    int books = 0;
+    while (k--)
+    {
+        books+= p11.top();
+        p11.pop();
+    }
+    cout << books << endl;
+}

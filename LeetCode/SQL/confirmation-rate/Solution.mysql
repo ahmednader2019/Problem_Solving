@@ -1,0 +1,15 @@
+// https://leetcode.com/problems/confirmation-rate
+
+WITH user_counts AS (
+    SELECT 
+        s.user_id,
+        COUNT(CASE WHEN c.action = 'confirmed' THEN 1 END) AS confirmed_count,
+        COUNT(CASE WHEN c.action = 'confirmed' OR c.action = 'timeout' THEN 1 END) AS total_count
+    FROM signups s
+    LEFT JOIN confirmations c ON s.user_id = c.user_id
+    GROUP BY s.user_id
+)
+SELECT 
+    user_id,
+    COALESCE(ROUND(COALESCE(confirmed_count, 0) * 1.0 / COALESCE(total_count, 1), 2), 0) AS confirmation_rate
+FROM user_counts;

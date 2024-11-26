@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , zeros = 0 , x , num , k  ;
+    cin >> n ;
+    vector<int>positive,negative;
+    for( int i = 0 ; i < n ; i++ )
+    {
+        cin >> x ;
+        if(x < 0 )
+            negative.push_back(x);
+        else if(x > 0)
+            positive.push_back(x);
+        else
+            zeros++;
+    }
+              // Negative section
+    cout << 1 << " " << negative[0] << endl;
+              // positive section
+    if(positive.size()==0)
+         cout << 2 << " " << negative[1] << " " << negative[2] <<endl;
+    else
+    {
+        {
+             cout << positive.size() ;
+             for( int i = 0 ; i < positive.size() ; i++ )
+               cout << " " <<  positive[i] ;
+        }
+     cout << endl;
+    }
+            //zero section
+        if(positive.size()!=0)
+        {
+            num = zeros+negative.size()-1;
+            k = 1 ;
+        }
+        else
+        {
+            num = zeros+negative.size()-3;
+            k = 3 ;
+        }
+          cout << num ;
+         for( int i = 0 ; i < zeros ; i++  )
+            cout << " " << 0 ;
+        for( int i = k ; i < negative.size() ; i++ )
+            cout << " " << negative[i] ;
+}

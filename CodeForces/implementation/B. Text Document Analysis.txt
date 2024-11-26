@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n ;
+    string str1,str2,s;
+    cin >> n ;
+    cin >> s ;
+    vector<int>outside;
+    vector<string>inside;
+    bool in = false ;
+    for( int i = 0 ; i < n+1 ; i++ )
+    {
+            if(s[i]=='(')
+                in = true ;
+            else if (s[i] ==')')
+                in = false ;
+        if(in == false )
+         {
+            if(s[i]>=65 && s[i]<=90 || s[i]>=97 && s[i]<=122)
+            {
+                str1+=s[i];
+                s[i]='\0';
+            }
+            else
+            {
+                if(str1[0]>=65 && str1[0]<=90 || str1[0]>=97 && str1[0]<=122)
+                {
+                outside.push_back(str1.size());
+                str1="";
+                }
+            }
+         }
+    }
+s.erase(remove(s.begin(), s.end(),'\0'),s.end());
+     for( int i = 0 ; i < s.size()+1 ; i ++ )
+      {
+            if(s[i]>=65 && s[i]<=90 || s[i]>=97 && s[i]<=122)
+            {
+                str2+=s[i];
+            }
+            else
+            {
+                if(str2[0]>=65 && str2[0]<=90 || str2[0]>=97 && str2[0]<=122)
+                {
+                inside.push_back(str2);
+                str2="";
+                }
+            }
+      }
+            if(outside.size()==0)
+                cout << 0 << " " << inside.size()<<endl;
+            else
+                cout << *max_element(outside.begin(), outside.end())<< " " <<  inside.size() <<endl;
+}

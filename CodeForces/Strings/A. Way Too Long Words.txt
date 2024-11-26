@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+  int n ;
+  cin >> n ;
+  string x[n];
+   for( int i = 0 ; i < n ; i++)
+    {
+     cin >> x[i] ;
+    }
+    for( int i = 0 ; i < n ; i++ )
+    {
+       if(x[i].length()>10)
+       {
+         cout << x[i].front()<<(x[i].length()-2)<< x[i].back()<<endl;
+       }
+       else
+        cout<< x[i] << endl;
+    }
+}

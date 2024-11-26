@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n , a , b , sum = 0,c=0;
+    cin >> n >> a >> b ;
+    long long arr[n];
+    for( int i = 0 ; i < n ; i++ )
+    {
+        cin >> arr[i];
+        if(arr[i]==1&a!=0)
+            a--;
+        else if(arr[i]==1&&b!=0)
+        {
+            b--;
+            c++;
+        }
+        else if(arr[i]==1&&c!=0)
+            c--;
+        else if(arr[i]==2&&b!=0)
+            b--;
+        else
+            sum+=arr[i];
+    }
+     cout << sum ;
+}

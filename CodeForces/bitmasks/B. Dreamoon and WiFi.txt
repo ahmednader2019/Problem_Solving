@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,s2;
+    int first = 0 , second = 0 , q = 0;
+    double count =0 ;
+    cin >> s1 >> s2 ;
+    for( int i = 0 ; i < s1.size() ; i++ )
+      {
+          if(s1[i]=='+')
+            first++;
+          else if(s1[i]=='-')
+            first--;
+          if(s2[i]=='+')
+            second++;
+          else if(s2[i]=='-')
+            second--;
+          if(s2[i]=='?')
+            q++;
+      }
+       cout << setprecision(12) <<fixed ;
+      if(q==0 && first==second)
+        cout << 1.0 ;
+      else if(q==0 && first!=second)
+        cout << 0 ;
+      else if(q!=0)
+      {
+          for( int m = 0 ; m < (1 << q) ; m++ )
+          {
+              int sum = 0 ;
+              for( int i = 0 ; i < q ; i++ )
+              {
+                  if((m&(1<<i))!=0)
+                    sum++;
+                  else
+                    sum--;
+              }
+              if(sum+first==second)
+                count++;
+          }
+          double w = count / (1<<q);
+          cout<< w ;
+      }
+}

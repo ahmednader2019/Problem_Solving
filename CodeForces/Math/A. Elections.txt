@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+     ll t ;
+     cin >> t ;
+     while(t--)
+     {
+          ll counter = 0 , s[3], a[3],maxx=0,sum=0;
+          for( int i = 0 ; i < 3 ; i++ )
+          {
+              cin >> s[i];
+              a[i] = s[i];
+          }
+          sort(a,a+3);
+          if(a[1]==a[2])
+            counter++;
+          maxx= max(s[0],max(s[1],s[2]));
+          for( int i = 0 ; i < 3 ; i++ )
+          {
+              sum = maxx - s[i];
+              if(sum==0&&counter==0)
+                cout << sum << " ";
+              else if(sum <= maxx || sum==0&&counter>0 )
+              {
+                cout << sum+1 <<" ";
+              }
+          }
+          cout << endl;
+     }
+}

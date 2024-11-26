@@ -1,0 +1,27 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+ int n ;
+ string S;
+ int Anton ;
+ int Danik ;
+ Anton = 0 ;
+ Danik = 0 ;
+ cin >>n;
+ cin >>S;
+ for( int i = 0 ; i < n ; i++ )
+ {
+  if (S[i] == 'A')
+  Anton++;
+  else
+  Danik++;
+ }
+ if ( Anton > Danik)
+ cout<< "Anton" << endl;
+ else if( Anton < Danik)
+ cout << " Danik " << endl;
+ else
+ cout<< "Friendship" <<endl;
+}

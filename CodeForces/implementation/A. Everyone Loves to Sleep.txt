@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t;
+    while(t--)
+    {
+        ll n ,h,m,sum = 1600, hours , minutes , awakeTime = 0 , amountOfsleep = 0 , bedTime = 0 ;
+        cin >> n >> hours >> minutes ;
+        bedTime = hours*60+minutes;
+        for( int i = 0 ; i < n ; i++ )
+         {
+             cin >> h >> m ;
+             awakeTime = h*60+m;
+             amountOfsleep = awakeTime-bedTime ;
+             if(amountOfsleep<0)
+             amountOfsleep +=1440;
+             sum = min(sum,amountOfsleep);
+        }
+            cout << sum/60 << " " << sum%60 << endl;
+    }
+}
+
+
+
+ 

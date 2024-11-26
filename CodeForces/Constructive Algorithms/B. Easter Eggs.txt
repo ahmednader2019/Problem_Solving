@@ -1,0 +1,25 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+     int n ;
+     cin >> n ;
+     string s = "ROYG" , x , y ="BIV" ;
+     for(int i = 0 ; i < 4 ; i++ )
+     {
+         x+=s[i];
+     }
+     for( int i = 0 ; i < n-4 ; i++)
+     {
+         x+=x[i];
+     }
+     int j = 0 ;
+     for( int i = n-3 ; i < n ; i++)
+     {
+         x[i]=y[j];
+         j++;
+     }
+     cout << x << endl;
+}

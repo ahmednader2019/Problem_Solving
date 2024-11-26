@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long  n,m;
+    cin>>n>>m;
+    long long  a[n],r=0;
+    for(long long  i=0;i<n;i++)
+    {
+        cin>>a[i];
+        r+=a[i];
+        cout<<r/m<<" ";
+        r%=m;
+    }
+    cout<<endl;
+    return 0;
+}

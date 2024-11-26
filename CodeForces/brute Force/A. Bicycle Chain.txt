@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , m , gears = 0 , maxgears = 0,x ;
+    vector<int>v;
+    cin >> n ;
+    int a[n];
+    for( int i = 0 ; i < n ; i++ )
+        cin >> a[i];
+
+    cin >> m ;
+    int b[m];
+    for(int i = 0 ; i < m ; i++ )
+        cin >> b[i];
+
+
+    for(int i = 0 ; i < m ; i++ )
+    {
+        for(int j = 0 ; j < n ; j++ )
+        {
+            if((b[i]%a[j])==0)
+            {
+              x = b[i]/a[j];
+              maxgears=max(maxgears,x);
+                if(maxgears==x)
+                    v.push_back(x);
+            }
+       }
+    }
+     maxgears=*max_element(v.begin(),v.end());
+    for(int i=0; i<v.size(); i++)
+        {
+        if(maxgears==v[i])
+            gears++;
+    }
+    cout<<gears;
+}

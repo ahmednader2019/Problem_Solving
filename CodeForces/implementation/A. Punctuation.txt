@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s,str ;
+    getline(cin,s);
+    for( int i = 0 ; i < s.size() ; i++ )
+    {
+        if(s[i]>='a'&&s[i]<='z')
+            str+=s[i];
+        if(s[i]==32&&s[i-1]>='a'&&s[i-1]<='z')
+            str+=" ";
+        if(s[i]==','||s[i]=='!'||s[i]=='.'||s[i]=='?')
+        {
+            if(str.back()==' ')
+            {
+               str.pop_back();
+            }
+            str+=s[i];
+            str+=" ";
+        }
+    }
+    cout << str ;
+}

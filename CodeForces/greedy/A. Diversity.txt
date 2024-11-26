@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+     string s ;
+     cin >> s ;
+     int k , sum = 0 ;
+     cin >> k ;
+     sort(s.begin(),s.end());
+      for( int i = 0 ; i < s.size(); i++ )
+      {
+          if(s[i+1]!=s[i])
+             sum++;
+      }
+       if(k>s.size())
+        cout << "impossible" ;
+       else if(sum<k)
+        cout << k-sum ;
+       else
+        cout <<0 ;
+}

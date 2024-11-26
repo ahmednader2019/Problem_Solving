@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main() 
+{
+    ll n , ans = 0 , first , second ;
+    cin >>  n ;
+    for(int i = 1 ; ; i++ )
+    {
+        first = i ;
+        second = n- first ;                 /// A. Fafa and his Company
+        if(second<first)
+            break ;
+        if(second %first == 0)
+            ans++;
+    }
+      cout << ans << endl;
+}

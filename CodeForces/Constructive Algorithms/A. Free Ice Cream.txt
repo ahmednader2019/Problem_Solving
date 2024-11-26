@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+int main()
+{
+   int n;
+   double x;
+   cin>> n;
+   cin>> x;
+   double d[n];
+   char ch[n];
+   double sumx = x;
+   int child=0;
+    for(int i = 0 ; i < n ;i++)
+     {
+       cout<< endl;
+       cin>>ch[i]>>d[i];
+       if(ch[i]=='+')
+        sumx = sumx + d[i];
+       else if(ch[i]=='-')
+       {
+         if(d[i]<=sumx)
+         {
+           sumx = sumx - (d[i]);
+         }
+         else if(d[i]>sumx)
+         {
+          child++;
+         }
+       }
+    }
+       cout << fixed << setprecision(0) << sumx << " " << child ;
+     }

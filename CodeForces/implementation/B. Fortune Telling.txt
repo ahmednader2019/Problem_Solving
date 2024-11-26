@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int oddSum(vector<int> v)
+ {
+    sort(v.begin(), v.end());
+    int sum = accumulate(v.begin(), v.end(), 0);
+    if (sum % 2 == 1)
+        return sum;
+    else
+        {
+        for (int i = 0; i < v.size(); ++i)
+         {
+            if (v[i] % 2 == 1)
+                return (sum - v[i]);
+        }
+    }
+    return 0;
+}
+int main()
+{
+   int n ,x;
+   cin >> n;
+   vector<int>v;
+   for( int i = 0 ; i < n ; i++ )
+   {
+       cin >>x;
+       v.push_back(x);
+   }
+        cout<<oddSum(v);
+}

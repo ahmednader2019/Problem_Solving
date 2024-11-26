@@ -1,0 +1,128 @@
+/*
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <bitset>
+using namespace std;
+typedef long long ll;
+#define nl "\n"
+#define all(x) x.begin(), x.end()
+#define fast cin.tie(0); cin.sync_with_stdio(0); cout.tie(0);
+const int N =1e5 + 5  , M = 1e6 + 5 ;
+int dx[] = {0,0,1,-1};
+int dy[] = {1,-1,0,0};
+int MX = INT_MAX ;
+ll level[N] ;
+int n , m , k ;
+vector<int>graph[N];
+vector<int>cost[N];
+vector<int>wis[N];
+
+bool valid(int i , int j ){
+    return  i>=0 && j>=0 && i<n && j<m;
+}
+
+ll check(int node){
+    priority_queue<pair<ll,ll>> p;
+    p.push({0,1}) ;
+    fill(level , level + N , MX) ;
+    level[1] = 0 ;
+    while(!p.empty()){
+        ll c ;
+        tie(c,node) = p.top() ;
+        c*=-1;
+        p.pop() ;
+       if(node == n) break;
+       for(int i =0 ;i<graph[node].size() ;i++){
+           ll d = c + cost[node][i] ; // cont
+           ll w = wis[node][i] ; // wisdom
+           if(level[w] > d){
+               level[w] = d;
+               p.push({-d ,w}) ;
+           }
+       }
+    }
+    return level[n] ;
+}
+
+void solve(){
+    cin>>n>>m>>k ;
+    for(int i =0 ; i<n ;i++){
+        int x , y , a , b ;
+        cin>>x>>y>>a>>b ;
+        graph[x].push_back(y) ;
+        graph[y].push_back(x) ;
+        cost[x].push_back(a) ;
+        cost[y].push_back(a) ;
+        wis[x].push_back(b) ;
+        wis[y].push_back(b) ;
+    }
+
+    int l = 1 , r = 1e9 , md =0 ;
+    ll ans = -1 ;
+    while(l<r){
+        md =(l+r) / 2 ;
+        if(check(md) < k){
+            r = md - 1;
+            ans = r ;
+        }
+        else{
+            l = md + 1 ;
+        }
+    }
+    cout<<ans<<'\n' ;
+}
+int main() {
+    fast;
+    //freopen
+    // ("red.in","r",stdin);
+    int t = 1, tt = 1;
+    cin >>t;
+    while (t--) {
+        solve() ;
+    }
+}
+
+*/
+
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <bitset>
+using namespace std;
+typedef long long ll;
+#define nl "\n"
+#define all(x) x.begin(), x.end()
+#define fast cin.tie(0); cin.sync_with_stdio(0); cout.tie(0);
+
+void solve(){
+    string  s1 , s2 ;
+    cin>>s1>>s2 ;
+    int freq[30] ;
+    fill(freq,freq+30 , 0) ;
+    for(int i =0 ;i<s1.length() ;i++){
+        freq[s1[i] - 'a']++ ;
+        freq[s2[i] - 'a']++ ;
+    }
+    sort(freq, freq + 27 );
+    int cnt =  0;
+    for(int i = 26 ;i>=0 ;i-- ){
+        if(freq[i] != 0 )cnt++ ;
+    }
+    if(cnt == 1)cout<<"0\n" ;
+    else if(cnt == 2) cout<<"1\n" ;
+    else if(cnt == 3) cout<<"2\n" ;
+    else cout<<"3\n" ;
+}
+int main() {
+    fast;
+    int t = 1, tt = 1;
+    cin >>t;
+    while (t--) {
+        solve() ;
+    }
+}

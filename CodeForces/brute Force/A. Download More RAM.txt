@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     int t ;
+     cin >> t ;
+     while(t--)
+     {
+         long long n , k ;
+         cin >> n >> k ;
+         vector<pair<int,int>>p;
+         long long a[n],b[n];
+         for( int i = 0 ; i < n ; i ++ )
+             cin >> a[i];
+         for( int i = 0 ; i < n ; i++ )
+         {
+             cin >> b[i];
+             p.push_back({a[i],b[i]});
+         }
+         sort(p.begin(),p.end());
+         for( int i = 0 ; i < n ; i++ )
+         {
+             if(k >= p[i].first)
+                k+=p[i].second;
+             else
+                break;
+         }
+         cout << k << endl;
+     }
+}

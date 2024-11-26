@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    string s ;
+    ll sum = 0, ways = 0 ;
+    cin >> s ;
+    ll siz = s.size();
+    vector<pair<ll,ll>>v;
+    for( ll i = 3 ; i < siz ; i++ )
+    {
+        if(s[i]=='r'&&s[i-1]=='a'&&s[i-2]=='e'&&s[i-3]=='b')
+        {
+            v.push_back(make_pair(i-3+1,i+1));
+            ways++;
+        }
+    }
+    if(ways==0)
+        cout << sum ;
+    else
+    {
+        sort(v.begin(),v.end());
+        sum+=v[0].first*((siz-(v[0].second))+1);
+        ll x = v.size();
+        for( ll i = 1 ; i < x ; i++ )
+            sum+=(v[i].first-v[i-1].first)*((siz-(v[i].second))+1);
+         cout << sum ;
+    }
+}

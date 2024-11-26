@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n , k , mn = INT_MAX , seconds = 0;
+    cin >> n >> k ;
+    long long a[n];
+    for( int i = 0 ; i < n ; i ++ )
+      cin >> a[i];
+      sort(a,a+n);
+      mn = a[0];
+      for( int i = 1 ; i < n ; i++ )
+      {
+          if(((a[i]-mn)%k+k)%k==0)
+             seconds+=(a[i]-mn)/k;
+          else
+          {
+              cout << -1 ;
+              return 0 ;
+          }
+      }
+       cout << seconds ;
+
+}
+ 

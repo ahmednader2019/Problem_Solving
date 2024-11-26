@@ -1,0 +1,16 @@
+// https://leetcode.com/problems/product-sales-analysis-iii
+
+# Write your MySQL query statement below
+-- select  s.product_id , s.year as first_year , s.quantity , s.price from Sales s join product p on s.product_id = p.product_id 
+
+select  s.product_id , s.year as first_year , s.quantity , s.price
+From Sales s join product p on s.product_id = p.product_id 
+where (s.product_id,s.year)
+in
+(select product_id , min(year) from Sales s
+group by product_id  ) 
+
+
+-- select distinct product_id , year , quantity from sales 
+--  group by product_id 
+--  order by product_id , year;

@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long int t;
+    cin >> t;
+    while(t--){
+        long int n;
+        cin >> n;
+        vector<string> v(2);
+        for(long int i= 0 ; i < 2; i++){
+            cin >> v[i];
+        }
+        bool hachu = false;
+        for(long int i= 0 ;i < n; i++){
+            if(v[0][i]=='1'&&v[1][i]=='1'){
+                hachu= true;
+            }
+        }
+        if(hachu){
+            cout << "NO" << endl;
+        }
+        else{
+            cout << "YES" << endl;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+// https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions
+
+# Write your MySQL query statement below
+select v.customer_id , count(v.customer_id) as count_no_trans From visits v 
+ where v.visit_id not in 
+(select v.visit_id from visits v 
+join transactions t on v.visit_id = t.visit_id)
+group by v.customer_id;

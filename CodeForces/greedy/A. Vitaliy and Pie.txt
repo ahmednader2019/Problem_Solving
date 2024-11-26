@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , sum = 0 , freq[26]={0};
+    string s ;
+    cin >> n >> s ;
+    for( int i = 0 ; i < s.size() ; i++ )
+    {
+        int x = s[i]-'a';
+        int y = s[i]-'A';
+        if(i%2==0)
+            freq[x]++;
+        else if(i%2!=0)
+        {
+            if(freq[y]==0)
+                sum++;
+            else
+                freq[y]--;
+        }
+    }
+      cout << sum ;
+}

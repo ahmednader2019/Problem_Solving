@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+long long n , k ;
+bool check(int mid )
+{
+    long int sum = 0 ;
+    long int div = mid / k ;
+    sum += mid;
+    while(div!=0)
+    {
+        sum+=div;
+        div/=k;
+    }
+     if(sum<n)
+        return 0 ;
+     else
+        return 1 ;
+}
+int main()
+{
+    long long first , last , mid ;
+    cin >> n >> k ;
+    first = 1 ;
+    last = n ;
+    while(first < last)
+    {
+       mid = (first +last)/2;
+       if(check(mid))
+        last = mid ;
+       else
+        first = mid+1;
+    }
+     cout << first << endl;
+}

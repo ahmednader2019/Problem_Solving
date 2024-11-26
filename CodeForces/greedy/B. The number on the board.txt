@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int k , x , sum = 0 , sum2 = 0 , m = 0 ;
+    string s ;
+    cin >> k >> s ;
+    for( int i = 0 ; i < s.size() ; i++ )
+    {
+        int x = int(s[i]) - 48  ;
+        sum+=x;
+    }
+      if( k <= sum )
+        cout << 0 ;
+      else
+      {
+          sort(s.begin(),s.end());
+          for( int i = 0 ; i < s.size() ; i++ )
+          {
+             int q =  int(s[i]) - 48 ;
+             sum2+=9-q;
+             m++;
+             if(sum2>=k-sum)
+                break;
+          }
+           cout << m ;
+      }
+}

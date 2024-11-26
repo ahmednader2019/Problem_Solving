@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef vector<int> vi;
+typedef long long int li;
+typedef vector<long long> vll;
+typedef vector<long long int> vli;
+#define pb push_back
+#define fr(i, a, b) for (int i = a; i < b; i++)
+#define sort(v) sort(v.begin(), v.end())
+#define sortd(v) sort(v.begin(), v.end(), greater<int>())
+
+void solve()
+{
+   string s;cin>>s;
+   vector<int>vis(26,0);
+   li cnt=0;
+   for(int i=0;i<s.size();i++){
+       if(vis[s[i]-'a']==0) vis[s[i]-'a']=1;
+       else{
+           cnt += 2;
+           for(int j=0;j<26;j++){
+               vis[j]=0;
+           }
+       }
+   }
+   cout<<s.size()-cnt<<"\n";
+}
+
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
+}

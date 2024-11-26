@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct dragon
+{
+    int x, y;
+    bool operator < (dragon other) const
+    {
+        return this -> x < other.x;
+    }
+};
+int main ()
+{
+    int s, n;
+    cin>> s>> n;
+    dragon arr[n];
+    for (int i = 0; i < n; i ++)
+    cin>> arr[i].x >> arr[i].y;
+    sort(arr, arr + n);
+    for (int i = 0; i < n; i ++)
+    {
+        if (s <= arr[i].x)
+        {
+            cout<< "NO";
+            return 0;
+        }
+        s += arr[i].y;
+    }
+    cout<< "YES";
+}

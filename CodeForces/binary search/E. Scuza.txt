@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+#pragma GCC ("unroll-loops")
+#pragma GCC ("O3")
+#define ll long long
+#define ull unsigned long long
+#define ld long double
+#define st string
+#define pll pair <ll, ll>
+#define pb push_back
+#define ins insert
+#define F first
+#define S second
+using namespace std;
+ll p[200010];
+int ma[200010];
+int main () {
+    ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+    int t;
+    cin >> t;
+    while(t--){
+        int n, q;
+        cin >> n >> q;
+        for(int i = 1; i <= n; ++i){
+            int x;
+            cin >> x;
+            p[i] = p[i - 1] + x;
+            ma[i] = max(ma[i - 1], x);
+        }
+        while(q--){
+            int k, l = 0, r = n + 1;
+            cin >> k;
+            while(l + 1 < r){
+                int m = (l + r) >> 1;
+                if(ma[m] > k)r = m;
+                else l = m;
+            }
+            cout << p[l] << " ";
+        }
+        cout << '\n';
+    }
+    return 0;
+}

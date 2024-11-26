@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , pairs = 0 , flag = 0 ,start , endd;
+    cin >> n ;
+    int a[n] ;
+    for( int i = 0 ; i < n ; i ++ )
+    {
+        cin >> a[i] ;
+        if(a[i]==1)
+        {
+            if(flag==0)
+            {
+                start = i ;
+                flag = 1 ;
+            }
+            pairs++;
+            endd=i;
+        }
+    }
+     for( int i = start ; i <= endd ; i++ )
+     {
+         if(a[i]==0 && a[i-1]+a[i+1]==2)
+            pairs++;
+     }
+      cout << pairs;
+}

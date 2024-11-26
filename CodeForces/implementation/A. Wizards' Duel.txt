@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define nn '\n'
+#define Ahmed_Adel ios::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+int frq[20005] = { 0 };
+void test() {
+  double a=0,b=0,c=0;
+  cin>>a>>b>>c;
+  cout<<a/(b+c)*(b)<<nn;
+}
+int main() {
+    Ahmed_Adel
+    ll tc = 0;
+    //cin >> tc;
+    //while (tc--)
+     test();
+}
+		 			 		 	  	 	  		 		  			  	

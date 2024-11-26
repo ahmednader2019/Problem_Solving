@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , sum = 0 , x  , labworks = 0 ;
+    float y,z ;
+    cin >> n ;
+    int a[n];
+    for( int i = 0 ; i < n ; i ++ )
+    {
+        cin >> a[i];
+        sum+=a[i];
+    }
+     sort(a,a+n);
+     y = sum ;
+     z = n ;
+     x = round(y/z);
+     if(x==5)
+        cout << 0 ;
+     else
+     {
+         for( int i = 0 ; ; i++ )
+         {
+             y-=a[i];
+             y+=5;
+             x = round(y/z);
+             labworks++;
+             if(x>=5)
+                break;
+         }
+         cout << labworks ;
+     }
+}

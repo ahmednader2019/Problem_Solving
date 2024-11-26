@@ -1,0 +1,11 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+      int n,k,l,c,d,p,nl,np,First,Second,Third;
+      cin >> n >> k >> l >> c >> d >> p >> nl >> np ;
+      First = (k*l)/nl;
+      Second = (c*d);
+      Third = (p/np) ;
+      cout << (min(First,min(Second,Third)))/n;
+}

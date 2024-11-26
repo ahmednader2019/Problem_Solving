@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#define FastIO ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define debug(x) cerr << #x << " is " << x << endl;
+#define endl '\n'
+#define pb push_back
+#define F first
+#define S second
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define ll long long int
+#define one(x) __builtin_popcount(x)
+#define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
+using namespace __gnu_pbds;
+using namespace std;
+const double pi = 3.14159265359;
+ll gcd(ll a, ll b){
+    if(b == 0){
+        return a;
+    }
+    return gcd(b, a % b);
+}
+inline int nxt(){
+    int x;
+    cin >> x;
+    return x;
+}
+void no(){
+    cout << "No" << endl;
+}
+void yes(){
+    cout << "Yes" << endl;
+}
+const int MOD = 1e9 + 7;
+void doWork(){
+    int N, s;
+    cin >> N >> s;
+    vector<int> v(N);
+    for(int i = 0; i < N; ++i){
+        cin >> v[i];
+    }
+    int ind = 0;
+    for(int i = 0; i < N; ++i){
+        if(v[i] > v[ind]){
+            ind = i;
+        }
+        s -= v[i];
+        if(s < 0){
+            break;
+        }
+    }
+    if(s >= 0){
+        ind = -1;
+    }
+    cout << ind + 1 << endl;
+}
+int main(){
+    FastIO
+    int tc = 1;
+    cin >> tc;
+    while(tc--){
+        doWork();
+    }
+    return 0;
+}

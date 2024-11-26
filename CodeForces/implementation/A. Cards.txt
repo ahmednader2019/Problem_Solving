@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int a=0,e=0;
+    for(int i=0;i<s.size();++i)
+    {
+        if(s[i]=='z')
+        {
+            a++;
+        }
+        else if(s[i]=='n')
+        {
+            e++;
+        }
+    }
+    
+
+     if(e!=0)
+     {
+         while(e>0)
+         {
+            cout<<1<<" ";
+             e--;
+         }
+     }
+     if(a!=0)
+     {
+         while(a>0)
+         {
+             cout<<0<<" ";
+             a--;
+         }
+     }
+    cout<<endl;
+}

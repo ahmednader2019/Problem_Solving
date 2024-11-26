@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int origianalights[5][5]={1};
+    int pressedlights[4][4];
+     for(int i = 1 ; i <= 3 ; i++ )
+     {
+         for(int j = 1 ; j <= 3 ; j++ )
+         {
+             cin >> pressedlights[i][j];
+             if(pressedlights[i][j]%2!=0)
+             {
+                 origianalights[i][j]=(origianalights[i][j]+1)%2;
+                 origianalights[i-1][j]=(origianalights[i-1][j]+1)%2;
+                 origianalights[i+1][j]=(origianalights[i+1][j]+1)%2;
+                 origianalights[i][j-1]=(origianalights[i][j-1]+1)%2;
+                 origianalights[i][j+1]=(origianalights[i][j+1]+1)%2;
+             }
+         }
+     }
+      for(int i = 1 ; i <= 3 ; i++ )
+      {
+        for(int j = 1 ; j <= 3 ; j++ )
+        {
+            if(origianalights[i][j]==0)
+                origianalights[i][j]=1;
+            else
+                origianalights[i][j]=0;
+            cout << origianalights[i][j];
+        }
+        cout << endl;
+      }
+
+}

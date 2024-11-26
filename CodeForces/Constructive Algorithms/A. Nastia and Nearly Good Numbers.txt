@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     long long t ;
+     cin >> t ;
+     while(t--)
+         {
+              long long a ,b , x , y , z ;
+              cin >> a >> b ;
+              x = a*b;
+              y = a ;
+              z = x+y;
+               if(b==1)
+                cout << "NO" << endl;
+               else 
+               {
+               cout << "YES" <<endl;
+               cout << x << " " << y << " " << z << endl;
+               }
+         }
+}

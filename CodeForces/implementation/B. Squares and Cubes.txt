@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t;
+    while(t--)
+    {
+        ll n , sum = 0 , flag2 = 0 , flag3 = 0 , first = 0 , second = 0 ;
+        set<ll>s;
+        cin >> n ;
+        if(n==1)
+            cout << 1 << endl;
+        else
+        {
+            for(int i = 1 ; i < n ; i++ )
+            {
+                first = pow(i,2);
+                second = pow(i,3);
+                if(first<=n)
+                    s.insert(first);
+                else if(first>n)
+                    flag2 = -1 ;
+                if(second<=n)
+                    s.insert(second);
+                else if(second>n)
+                    flag3 = -1 ;
+                if(flag2==-1&&flag3==-1)
+                    break;
+            }
+             cout << s.size() << endl;
+            }
+    }
+}

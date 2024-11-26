@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char arr[4][4];
+    int sum = 0,res=0;
+    for( int i = 0 ; i < 4 ; i++ )
+    {
+        for( int j = 0 ; j < 4 ; j++ )
+          cin >> arr[i][j];
+    }
+
+    for( int i = 0 ; i < 3 ; i++ )
+    {
+        for( int j = 0 ; j < 3 ;j++)
+        {
+            if(arr[i][j]==arr[i+1][j]  )
+                sum++;
+            if( arr[i][j]==arr[i][j+1] )
+                sum++;
+            if( arr[i][j]==arr[i+1][j+1])
+                sum++;
+            if(sum==0 || sum>=2)
+            {
+                res++;
+                break;
+            }
+            else
+             sum = 0 ;
+        }
+
+    }
+        if(res>0)
+            cout << "YES";
+        else
+            cout << "NO";
+}

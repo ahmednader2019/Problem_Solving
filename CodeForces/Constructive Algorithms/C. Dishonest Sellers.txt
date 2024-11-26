@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , k , sum = 0 , minn , x , y ;
+    cin >> n >> k ;
+    int a[n],b[n];
+    vector < pair < int , int > > v ;
+    for( int i = 0 ; i < n ; i++ )
+         cin >> a[i] ;
+    for( int i = 0 ; i < n ; i++ )
+         cin >> b[i] ;
+    for(int i = 0 ; i < n ; i++ )
+        v.push_back( make_pair(a[i]-b[i],i ));
+    sort(v.begin(),v.end());
+    for( int i = 0 ; i < n ; i++ )
+    {
+        minn = min(a[i],b[i]);
+        if(minn==a[i])
+            k--;
+        sum+=minn;
+    }
+    if(k > 0)
+    {
+        for( int i = 0,j = 0 ; j < k ; i++ )
+        {
+            x = v[i].first;
+            y = v[i].second;
+            if(x > 0)
+            {
+                sum-=b[y];
+                sum+=a[y];
+                j++;
+            }
+        }
+    }
+       cout << sum ;
+}

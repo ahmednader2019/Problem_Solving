@@ -1,0 +1,26 @@
+// https://leetcode.com/problems/movie-rating
+
+with UserName as 
+(
+SELECT mr.user_id, COUNT(mr.user_id) AS rating_count, u.name
+FROM MovieRating mr
+JOIN Users u ON mr.user_id = u.user_id
+GROUP BY mr.user_id
+HAVING COUNT(mr.user_id) = (
+    SELECT MAX(count) 
+    FROM (
+        SELECT COUNT(user_id) AS count
+        FROM MovieRating
+        GROUP BY user_id
+    ) AS counts
+)
+)
+
+(select name  as results From UserName order by name asc limit 1)
+union all
+(select m.title as results From MovieRating mr
+join Movies m on mr.movie_id = m.movie_id
+WHERE mr.created_at BETWEEN '2020-02-01' AND '2020-02-29'
+group by mr.movie_id
+order by avg(mr.rating) desc , m.title asc
+limit 1 )

@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string pinapple,gogol,test;
+    cin >> pinapple >> gogol ;
+    int x = gogol.size(),sum=0;
+    int y=x-1;
+    if(pinapple.size()<gogol.size())
+        cout << 0 ;
+    else
+    {
+      for(int i = 0 ; i < pinapple.size() ; i++ )
+      {
+          test = pinapple.substr(i,x);
+          if(test==gogol)
+          {
+              pinapple[i+y]='#';
+              i+=y;
+              sum++;
+          }
+      }
+       cout << sum ;
+    }
+}

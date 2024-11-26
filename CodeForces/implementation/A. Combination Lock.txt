@@ -1,0 +1,21 @@
+#include <iostream>
+#include<cmath>
+#include <string>
+using namespace std;
+int main() {
+    int n,num1,num2,sum=0;
+    string a,b,x,y;
+    cin >> n >> a >> b;
+    for( int i = 0 ; i < n ; i++)
+    {
+       x = a[i];
+       y = b[i];
+       num1 = stoi(x);
+       num2 = stoi(y);
+       if(abs(num1-num2)<=5)
+        sum+=abs(num1-num2);
+       else
+        sum+=10-abs(num1-num2);
+    }
+      cout << sum ;
+}

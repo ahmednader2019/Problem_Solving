@@ -1,0 +1,79 @@
+// ...............................Bismillahir Rahmaanir Rahim.......................................//
+#include<bits/stdc++.h>
+using namespace       std;
+typedef               long long int ll;
+typedef               vector <int> vi;
+typedef               vector <long long> vl;
+typedef               vector<string> vs;
+typedef               vector<char> vc;
+typedef               set <int> si;
+typedef               set <long long> sl;
+typedef               set <char> sc;
+typedef               set <string> ss;
+
+#define               torad(x)   ((x) * ((2 * acos(0)) / 180.0))
+#define               todeg(x)   ((x) * (180.0 / (2 * acos(0))))
+#define               endl    "\n"
+#define               Yes     cout << "Yes\n"
+#define               No      cout << "No\n"
+#define               YES     cout << "YES\n"
+#define               NO      cout << "NO\n"
+#define               PI      (2 * acos(0))
+#define               sz(n) (int)(n).size()
+#define               min(x,y) ((x) < (y) ? (x) : (y))
+#define               max(x,y) ((x) > (y) ? (x) : (y))
+#define               odd(x)  ((x) & 1)
+#define               all(x) (x).begin(),(x).end()
+
+#define               mp make_pair
+#define               pub push_back
+#define               pob pop_back
+#define               nl  cout << endl;
+#define               INPUT  freopen("in1.txt","r",stdin)
+#define               OUTPUT freopen("out1.txt","w",stdout)
+#define               optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
+
+
+string toBinary(ll num)    {
+
+	string a;
+
+	while (num)    {
+
+		if (num % 2)   a += '1';
+		else    a += '0';
+
+		num /= 2;
+	}
+
+	reverse(a.begin(), a.end());
+
+	return a;
+}
+
+void solve()
+{
+	int a[10], b[10], n, m, i, j;
+	cin >> n >> m;
+	for (i = 1; i <= m ; i++)
+		cin >> a[i] >> b[i];
+
+	if (n > m)
+		YES;
+	else
+		NO;
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+	INPUT;
+	OUTPUT;
+#endif
+	optimize();
+	int t;
+	cin >> t;
+	while (t--)
+		solve();
+	// Innallaha Ma'asaabirin = Indeed, Allah is with those who are patient.
+}

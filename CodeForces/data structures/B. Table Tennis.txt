@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    deque<long long > d;
+    long long n , x , k , counter = 0 ,mx=0;
+    cin >> n >> k ;
+    for( int i = 0 ; i < n ; i ++ )
+    {
+        cin >> x ;
+        d.push_back(x);
+    }
+    for( int i = 0 ; i < n ; i++ )
+    {
+        if(d.size()==1||counter==k)
+            break;
+        if(d[0]>d[1])
+        {
+            swap(d[0],d[1]);
+            mx = max(d[0],d[1]);
+            d.pop_front();
+            counter++;
+        }
+        else if(d[0]<d[1])
+        {
+            counter = 1 ;
+            mx = max(d[0],d[1]);
+            d.pop_front();
+        }
+    }
+      cout << mx << endl;
+}

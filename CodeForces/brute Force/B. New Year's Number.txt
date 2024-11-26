@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t;
+    cin >> t ;
+    while(t--)
+    {
+       ll n , sum = 0;
+       cin >> n ;
+       if(n<2020)
+        cout << "NO" << endl;
+       else
+       {
+           while(n>2021)
+           {
+               n-=2021;
+               sum++;
+           }
+           if(n+sum>=2020)
+            cout <<"YES"<< endl;
+           else
+            cout << "NO" << endl;
+        }
+   }
+}

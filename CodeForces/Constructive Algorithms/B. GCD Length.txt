@@ -1,0 +1,27 @@
+#include <iostream>
+#include<math.h>
+const int M=2e5+9;
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t,a,b,c,x,y,k,k1;
+    cin>>t;
+    while(t--)
+    {cin>>a>>b>>c;
+            k=pow(10,b-1);
+            k1=pow(10,a-1);
+        x=pow(10,c-1)+1;
+        y=pow(10,c-1)+1;
+         while(x<k1)
+            x*=9;
+        while(y<k)
+            y*=7;
+cout<<x<<" "<<y<<endl;
+
+    }
+return 0;
+}
+
+
+ 

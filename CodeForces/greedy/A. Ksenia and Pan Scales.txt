@@ -1,0 +1,42 @@
+#include<iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+int main()
+{
+ string x,y,z,res;
+ int k,sub,res1;
+ cin >> x ;
+ cin >> res;
+  for( int i = 0 ; ;i++)
+  {
+    if(x[i]==124)
+    {
+     k = i ;
+     break;
+     }
+  }
+ y = x.substr(0,k);
+ z = x.substr(k+1,x.size());
+  sub = y.length() - z.length();
+  sub = abs(sub);
+  res1 = res.length();
+  int total = sub +res1;
+  int A = total / 2 ;
+   if(res1>=sub&&total%2==0)
+    {
+     if(y.length()<z.length())
+     {
+      y+=res.substr(0,A);
+      z+=res.substr(A,res.length());
+     }
+     else if(y.length()>=z.length())
+     {
+     z+=res.substr(0,A);
+     y+=res.substr(A,res.length());
+     }
+      cout << y << '|' << z << endl;
+    }
+    else
+     cout <<"Impossible";
+}

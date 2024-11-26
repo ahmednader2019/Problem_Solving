@@ -1,0 +1,66 @@
+#include "bits/stdc++.h"
+using namespace std;
+
+template <typename T1, typename T2> 
+istream &operator>>(istream &istream, pair<T1, T2> &p) {
+      return (istream >> p.first >> p.second);
+}
+template <typename T> 
+istream &operator>>(istream &istream, vector<T> &v) {
+      for (auto &it : v) cin >> it;
+      return istream;
+}
+template <typename T1, typename T2> 
+ostream &operator<<(ostream &ostream, const pair<T1, T2> &p) {
+      return (ostream << p.first << " " << p.second << '\n');
+}
+template <typename T> 
+ostream &operator<<(ostream &ostream, const vector<T> &c) {
+      for (auto &it : c) cout << it << " ";
+      return ostream;
+}
+
+mt19937 rng;
+int random(int l, int r) {
+      uniform_int_distribution<int> dist(l, r);
+      return dist(rng);
+}
+
+#define int long long
+#define all(v) (v).begin(), (v).end()
+#define sz(v) (int)v.size() 
+
+const int inf = (int)1e18 + 7;
+const int N = (int)1e6;
+const int mod = (int)1e9 + 7;
+
+#ifndef ONLINE_JUDGE 
+#include "bugger.h"
+#else 
+#define debug(...) 114
+#endif
+
+void solve() {
+
+      int n;
+      cin >> n;
+      vector<int> a(n);
+      cin >> a;
+
+      cout << "1 " << n << '\n';
+
+}
+
+signed main() {
+
+      ios_base::sync_with_stdio(false); 
+      cin.tie(NULL);
+
+      int T = 1;
+      cin >> T;
+        
+      for(int t = 1; t <= T; t++) {
+            solve();
+      }
+ 
+}

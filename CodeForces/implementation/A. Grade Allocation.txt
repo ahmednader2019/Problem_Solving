@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+  ll t ;
+  cin >> t ;
+  while(t--)
+  {
+      ll n ;
+      double m , sum = 0 , avg = 0 ;
+      cin >> n >> m ;
+      ll a[n];
+      for(int i = 0 ; i < n ; i ++)
+      {
+          cin >> a[i];
+          sum+=a[i];
+      }
+       avg = sum / n ;
+       avg*= n  ;
+       cout << min(m,avg)<<endl;
+  }
+}

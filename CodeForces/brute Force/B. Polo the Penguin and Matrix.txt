@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n , m , d , k = 0 , mid , sum = 0;
+    cin >> n >> m >> d ;
+    int a[n*m];
+    for( int i = 0 ; i < n*m ; i ++)
+    {
+      cin >> a[i];
+    }
+    sort(a,a+n*m);
+    mid = (n*m/2);
+    for( int i = 0 ; i < n*m ; i++ )
+    {
+        if((a[i]-a[mid])%d!=0)
+        {
+            cout << -1 ;
+            return 0 ;
+        }
+        else
+            sum+= abs(a[i]-a[mid]);
+    }
+     cout << sum/d;
+     return 0 ;
+}

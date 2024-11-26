@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t;
+    while(t--)
+    {
+        ll n , x , y;
+        cin >> n ;
+        x = n / 2 ;
+        y = n / 2  ;
+        if(n%2==0)
+            cout << x << " " << y-1 << " " << 1 << endl;
+        else
+        {
+            y++;
+            if(x%2!=0)
+            cout << x-2 << " " << y+1 << " " << 1 << endl;
+            else
+            cout << x-1 << " " << y << " " << 1 << endl;
+        }
+    }
+}

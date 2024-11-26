@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+char tolower(char ch){
+    if(ch>=65 && ch<=90)
+    ch=ch+32;
+    return ch;
+}
+
+char toupper(char ch){
+    if(ch>=97 && ch<=122)
+    ch=ch-32;
+    return ch;
+}
+
+char lower(char ch){
+    if(ch>=97 && ch<=122)
+    return true;
+    else return false;
+}
+
+int main(){
+    string s;
+    cin>>s;
+    int f=0;
+    for(int i=1;i<s.size();i++){
+        if(lower(s[i]))
+        f=1;
+    }
+    if(f==0){
+        for(int i=0;i<s.size();i++){
+            if(lower(s[i]))
+            s[i]=toupper(s[i]);
+            else
+            s[i]=tolower(s[i]);
+        }
+    }
+    cout<<s<<endl;
+    return 0;
+}

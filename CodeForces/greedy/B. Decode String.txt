@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+  char alphabet[26];
+  for (int ch = 'a'; ch <= 'z'; ch++)
+    alphabet[ch-'a'] = ch;
+
+  ll n ;
+  cin >> n ;
+  while(n--)
+  {
+      ll t , y ;
+      cin >> t ;
+      string s , str , x = ""  ;
+      cin >> s ;
+      for( int i = t-1 ; i >= 0 ;)
+      {
+              if(s[i]=='0')
+              {
+                  x=s[i-2];
+                  x+=s[i-1];
+                  y = stoi(x);
+                  str+=alphabet[y-1];
+                  i = i - 3 ;
+              }
+              else
+               {
+                  y = s[i] - '0';
+                  str+=alphabet[y-1];
+                  i--;
+               }
+
+      }
+      reverse(str.begin(), str.end());
+      cout << str << endl;
+  }
+}

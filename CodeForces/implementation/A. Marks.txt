@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#include <string>
+using namespace std;
+int main()
+{
+    int n , m ,y, res=0,k=0;
+    string s , str , x ;
+    vector<int>v;
+    cin >> n >> m ;
+    int arr[n][m];
+    int max[m];
+     for( int i = 0 ; i < n ; i++ )
+     {
+         cin >> str ;
+         s+=str;
+     }
+    for( int i = 0 ; i < n ; i++ )
+    {
+      for( int j= 0 ; j < m ; j++ )
+      {
+        x = s[k];
+        y = stoi(x);
+        arr[i][j] = y;
+        k++;
+        if(i==0)
+        max[j]=arr[i][j];
+      }
+    }
+     for( int i = 0 ; i < n ; i++ )
+     {
+         for( int j = 0 ; j < m ; j++ )
+         {
+             if(arr[i][j]>max[j])
+                max[j]=arr[i][j];
+         }
+     }
+     for( int j = 0 ; j < m ; j++ )
+     {
+         for( int i = 0 ; i < n ; i++ )
+         {
+             if(arr[i][j]>=max[j])
+                v.push_back(i+1);
+         }
+     }
+     sort(v.begin(), v.end());
+     v.erase(unique(v.begin(), v.end()), v.end());
+     cout << v.size() << endl;
+}

@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t ;
+    cin >> t ;
+    while(t--)
+        {
+             long long n , sum = 0,mn;
+             cin >> n ;
+             long long boxes[n];
+             cin >> boxes[0];
+             mn = boxes[0];
+             for( int i = 1 ; i < n ; i++ )
+                 {
+                     cin >> boxes[i];
+                     if(boxes[i]<mn)
+                        mn = boxes[i];
+                 }
+            for( int i = 0 ; i < n ; i++ )
+                sum+=boxes[i]-mn;
+            cout << sum << endl;
+        }
+}

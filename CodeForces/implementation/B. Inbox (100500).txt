@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+       int n,ans=0,index = - 1 ;
+       cin>>n;
+       int arr[n];
+       for (int i=0;i<n;i++)
+        cin>>arr[i];
+      for (int i=0;i<n;i++)
+        {
+        if (arr[i]==1)
+        {
+            index=i;
+            break;
+        }
+       }
+       if (index<0)
+       {
+           cout<<0;
+           return 0;
+      }
+       else
+            ans++;
+    for (int i=index+1;i<n;i++)
+        {
+               if (arr[i]==0)
+                continue;
+               if (arr[i-1]==1)
+                ans++;
+               else
+               ans+=2;
+       }
+        cout<<ans;
+        return 0;
+    }

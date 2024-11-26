@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+     int t ;
+     cin >> t ;
+  while(t--)
+   {
+    int n , max = 0 , maxelement = 0 , element , ope = 0 ;
+    cin >> n ;
+    int a[n];
+    for( int i = 0 ; i < n ; i++ )
+    {
+        cin >> a[i] ;
+         if(a[i] > maxelement)
+           maxelement = a[i];
+    }
+     element = a[n-1] ;
+     int i = 2 ;
+     while(element != maxelement)
+     {
+         if(a[n-i] > element)
+         {
+             ope++;
+             element = a[n-i];
+         }
+         i++;
+     }
+       cout << ope << endl;
+   }
+}

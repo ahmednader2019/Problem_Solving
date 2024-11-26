@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string a , s ;
+    cin >> a >> s ;
+    int p1 = 0 , p2 = 0 ;
+    int n = a.size();
+    int m = s.size();
+    sort(s.begin(),s.end(),greater<int>());
+    if(s==a)
+    {
+        cout << a ;
+        return 0 ;
+    }
+    else
+    {
+    while(p1 < n && p2 < m )
+    {
+        if(a[p1] >= s[p2])
+            p1++;
+        else if(a[p1] < s[p2])
+        {
+            swap(a[p1],s[p2]);
+            p1++;
+            p2++;
+        }
+    }
+     cout << a ;
+    }
+
+}

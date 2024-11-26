@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+#include<string>
+using namespace std;
+int main()
+{
+    string a , b , c ;
+    cin >> a >> b ;
+    int x,y,z;
+    x = stoi(a);
+    y = stoi(b);
+    z = x + y ;
+    c = to_string(z);
+    a.erase(remove(a.begin(), a.end(), '0'),a.end());
+    b.erase(remove(b.begin(), b.end(), '0'),b.end());
+    c.erase(remove(c.begin(), c.end(), '0'),c.end());
+    x = stoi(a);
+    y = stoi(b);
+    z = stoi(c);
+     if(x+y==z)
+        cout << "YES";
+     else
+        cout << "NO";
+}

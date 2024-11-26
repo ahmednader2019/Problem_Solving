@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+
+void solve(){
+	string s;
+	cin >> s;
+	int num;
+	if(s.size() != 1){
+		char n1 = s[s.size()-1];
+		char n2 = s[s.size()-2];
+		int l = (int)(n1) - 48;
+		int r = (int)(n2) - 48;
+		num = r*10 + l;
+	}else{
+		num = (int)s[0];
+	}
+	if(num % 4 == 0){
+		cout << 4 << endl;
+	}else{
+		cout << 0 << endl;
+	}
+
+}
+
+
+int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	ll tt = 1;
+	// cin >> tt;
+	while(tt--){
+		solve();	
+	}	
+}

@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll t ;
+    cin >> t ;
+    while(t--)
+    {
+        ll a , b , c , x , y , z ;
+        cin >> a >> b >> c ;
+        x = abs(a-b)*2;
+        if( a<=x && b <=x && c <= x )
+        {
+            y = c+abs(a-b);
+            z = c-abs(a-b);
+            if(y<=x && y>=1)
+                cout << y << endl;
+            else if(z<=x && z>=1)
+                cout << z << endl;
+            else
+                cout << -1 << endl;
+        }
+        else
+            cout << -1 << endl;
+    }
+}

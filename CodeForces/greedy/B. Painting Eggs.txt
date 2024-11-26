@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    string s ="";
+    cin >> n;
+    int sumA = 0, sumG = 0,a,g;
+    while(n--)
+        {
+        cin >> a >> g;
+        if(abs(sumA + a - sumG) <= 500)
+        {
+            sumA += a;
+            s += 'A';
+        }
+        else{
+            sumG += g;
+            s += 'G';
+        }
+    }
+    cout << s ;
+    return 0;
+}
