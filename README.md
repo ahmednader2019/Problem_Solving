@@ -8,7 +8,7 @@ Each solution is well-organized and categorized by platform, difficulty, and top
 
 ## Platforms
 
-### <img src="https://starchenkov.pro/qa/codeforces/codeforces.logo.png" alt="Codeforces Logo" width="200"/> [Codeforces](https://codeforces.com/)
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Codeforces_logo.svg/2560px-Codeforces_logo.svg.png" width="500"/>
 Codeforces is a competitive programming platform that hosts contests and provides a vast collection of problems to challenge your algorithmic and problem-solving skills.
 
 - **Directory**: [Codeforces Solutions](./Codeforces)
