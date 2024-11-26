@@ -23,7 +23,7 @@ LeetCode is a go-to platform for preparing for technical interviews, offering pr
 
 This repository includes my **50 SQL Challenges** solutions, which focus on enhancing SQL query skills using advanced concepts like joins, subqueries, aggregations, and window functions.
 
-- **Directory**: [LeetCode SQL Solutions](./LeetCode/SQL)
+- **Directory**: [LeetCode SQL Solutions](./LeetCode/)
 - **Highlights**:
   - Solves all 50 SQL Challenges with detailed query explanations.
   - Categorized by concepts like Basic Queries, Joins, Aggregations, and Advanced SQL.
