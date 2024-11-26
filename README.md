@@ -11,7 +11,7 @@ Each solution is well-organized and categorized by platform, difficulty, and top
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Codeforces_logo.svg/2560px-Codeforces_logo.svg.png" width="500"/>
 Codeforces is a competitive programming platform that hosts contests and provides a vast collection of problems to challenge your algorithmic and problem-solving skills.
 
-- **Directory**: [Codeforces Solutions](./Codeforces/)
+- **Directory**: [Codeforces Solutions](./CodeForces/)
 - **Highlights**:
   - Problems are grouped by contest ID and rating.
   - Solutions include optimized code with clear logic.
